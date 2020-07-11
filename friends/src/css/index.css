@@ -129,3 +129,90 @@ table {
 html {
   font-size: 62.5%;
 }
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  border-bottom-style: solid;
+  background-color: #dad4d4;
+}
+h3 {
+  font-size: 2rem;
+}
+.header-button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #4e4e52;
+  padding: 5px;
+  color: white;
+  box-shadow: 2px 2px grey;
+}
+a {
+  color: unset;
+  text-decoration: unset;
+}
+.friends-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1%;
+}
+.friends-list .container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 60%;
+  padding: 1%;
+}
+.friend {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 125px;
+  border: 1px solid #4e4e52;
+  background-color: #ccc1c1;
+  padding: 1%;
+  margin: 1%;
+  line-height: 1px;
+  box-shadow: 2px 2px grey;
+}
+.friend .container {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 90%;
+  margin-bottom: 3%;
+}
+.footer-container {
+  display: flex;
+  justify-content: center;
+}
+.footer-container footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  height: 50px;
+  background-color: #7dbae6;
+  margin-top: 1%;
+  width: 98%;
+  border-radius: 3px;
+}
+.footer-container footer h3 {
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+.footer-container footer a {
+  color: unset;
+}
+.footer-container footer a:hover {
+  color: white;
+}
