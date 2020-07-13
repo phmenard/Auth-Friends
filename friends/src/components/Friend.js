@@ -1,14 +1,17 @@
 import React from "react";
 import "../css/index.css";
 
-const Friend = () => {
+const Friend = (props) => {
     return (
         <div className="friend">
             <div className="container">
-                <h1>Name: Paul Menard</h1>
-                <p>Age: 46</p>
-                <p>Email: me@yahoo.com</p>
+                <h1>Name: {props.friend.name}</h1>
+                <p>Age: {props.friend.age}</p>
+                <p>Email: {props.friend.email}</p>
             </div>
+            
+            
+            
         </div>
     );
 
