@@ -7,6 +7,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Header from "./components/Header";
 import FriendsList from "./components/FriendsList";
 import Footer from "./components/Footer";
+import NewFriend from "./components/NewFriend";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -22,12 +23,16 @@ const App = () => {
           
             : ""
           }
-
-          {/*<PrivateRoute exact path="/" component={FriendsList} />*/}
+         
           <Footer />
-          
-          
         </Route>
+        <Switch>
+          <PrivateRoute exact path="/add">
+          <Header loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
+          <NewFriend />
+          <Footer />
+          </PrivateRoute>
+        </Switch>
       </header>
     </div>
   );
