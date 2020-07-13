@@ -5,7 +5,9 @@ import { axiosWithAuth } from './utils/asiosWithAuth';
 
 import "../css/index.css";
 
-const Header = (props) => {   
+const Header = (props) => {
+    
+    const [addingFriend, setAddFriend] = useState(false);
 
     const [credentials, setCredentials] = useState({
         credentials: {
@@ -14,12 +16,12 @@ const Header = (props) => {
         }
     });
 
-    const login = e => {
+    const login = e =>  {
         e.preventDefault();
         axiosWithAuth().post('login', credentials)
             .then(res => {
                 console.log(res);
-                localStorage.setItem('token', res.data.token);
+                localStorage.setItem('token', res.data.payload);
                 props.setLoggedIn(true);
             })
     }
@@ -36,12 +38,16 @@ const Header = (props) => {
         props.setLoggedIn(false);
     }
 
+    const setAdd = () => {
+        
+    }
+
     return (
         <div className="header" >
             <h3>My Friends List</h3>
             {!props.loggedIn ?
                 <div><form onSubmit={login}>
-                    <label for="username">
+                    <label htmlFor="username">
                     <input
                         type="text"
                         name="username"
@@ -49,7 +55,7 @@ const Header = (props) => {
                         value={credentials.username}
                         onChange={handleChange}
                     /></label>
-                    <label for="password">
+                    <label htmlFor="password">
                     <input
                         type="password"
                         name="password"
