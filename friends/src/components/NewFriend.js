@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../css/index.css";
 import { axiosWithAuth } from "./utils/asiosWithAuth";
+import { useHistory } from "react-router-dom"
 
 const NewFriend = () => {
+    let history = useHistory();
 
     const [newFriend, setNewFriend] = useState({
         id: "",
@@ -19,6 +21,8 @@ const NewFriend = () => {
                 console.log(res);
                 
             })
+
+            history.push('/');
     }
 
     const handleChange = e => {
