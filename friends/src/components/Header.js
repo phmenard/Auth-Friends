@@ -6,8 +6,8 @@ import { axiosWithAuth } from './utils/asiosWithAuth';
 import "../css/index.css";
 
 const Header = (props) => {
-    
-    const [addingFriend, setAddFriend] = useState(false);
+
+    //const [addingFriend, setAddFriend] = useState(false);
 
     const [credentials, setCredentials] = useState({
         credentials: {
@@ -16,7 +16,7 @@ const Header = (props) => {
         }
     });
 
-    const login = e =>  {
+    const login = e => {
         e.preventDefault();
         axiosWithAuth().post('login', credentials)
             .then(res => {
@@ -30,7 +30,7 @@ const Header = (props) => {
         setCredentials({
             ...credentials,
             [e.target.name]: e.target.value
-          });
+        });
     };
 
     const logOut = () => {
@@ -39,7 +39,7 @@ const Header = (props) => {
     }
 
     const setAdd = () => {
-        
+
     }
 
     return (
@@ -48,31 +48,31 @@ const Header = (props) => {
             {!props.loggedIn ?
                 <div><form onSubmit={login}>
                     <label htmlFor="username">
-                    <input
-                        type="text"
-                        name="username"
-                        placeholder="user name"
-                        value={credentials.username}
-                        onChange={handleChange}
-                    /></label>
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="user name"
+                            value={credentials.username}
+                            onChange={handleChange}
+                        /></label>
                     <label htmlFor="password">
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="password"
-                        value={credentials.password}
-                        onChange={handleChange}
-                    /></label>
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="password"
+                            value={credentials.password}
+                            onChange={handleChange}
+                        /></label>
                     <button>Log in</button>
                 </form></div>
                 :
                 <><Link to="/add">
                     <div className="header-button">Add Friend</div>
                 </Link>
-                
-                    <Link to="/" >
-                        <div onClick={logOut} className="header-button">Log Out</div>
-                    </Link></>
+
+                <Link to="/" >
+                    <div onClick={logOut} className="header-button">Log Out</div>
+                </Link></>
             }
         </div>
 
