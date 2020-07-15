@@ -216,3 +216,14 @@ a {
 .footer-container footer a:hover {
   color: white;
 }
+.friend-icons {
+  display: flex;
+  width: 35%;
+  justify-content: space-evenly;
+}
+.friend-icons .edit {
+  cursor: pointer;
+}
+.friend-icons .remove {
+  cursor: pointer;
+}
